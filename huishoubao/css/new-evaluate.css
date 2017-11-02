@@ -1,0 +1,237 @@
+@charset "utf-8";
+.clearfix:after {
+    content: " ";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+    font-size: 0;
+}
+
+.evaluates-wrap {
+    font-size: .12rem;
+}
+
+.header {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 100%;
+    min-width: 320px;
+    max-width: 740px;
+}
+
+/*进度条开始*/
+.progressbar {
+    overflow: hidden;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    width: 100%;
+    height: 0.2rem;
+    line-height: .22rem;
+    text-indent: .1rem;
+    font-size: .1rem;
+    background-color: #fff;
+}
+
+.progressbar .bg {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    text-align: center;
+}
+
+.progressbar .cover {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background-color: #f9be00;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+    text-align: right;
+}
+
+/*顶部提示*/
+.header .tip {
+    margin-top: .2rem;
+    padding: .1rem;
+    font-size: .11rem;
+    line-height: .15rem;
+    background: #f0f0f0;
+    color: #9e9e9e;
+}
+
+/*估价容器*/
+.evaluates-wrap {
+    margin-top: .7rem;
+}
+
+/*公共部分*/
+.toggle .evaluate-title {
+    color: #ccc;
+    font-size: .12rem;
+    padding: .18rem .1rem .05rem .1rem;
+}
+
+.toggle.open .evaluate-title {
+    color: #333;
+}
+
+.toggle ul {
+    display: none;
+}
+
+.toggle.open ul {
+    display: block;
+}
+
+.evaluates-wrap .input-wrap {
+    position: relative;
+    width: 100%;
+    height: .4rem;
+    margin: .05rem 0;
+    color: #666;
+    text-align: center;
+    background: #f5f5f5;
+}
+
+li.selected .input-wrap {
+    color: #fff;
+    background: #f9be00;
+}
+
+.evaluate-item span {
+    position: absolute;
+    width: 90%;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    -ms-transform: translate3d(-50%, -50%, 0);
+    -moz-transform: translate3d(-50%, -50%, 0);
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    -o-transform: translate3d(-50%, -50%, 0);
+}
+
+/*基本选项*/
+.basic-property ul {
+    display: none;
+    margin-top: .05rem;
+    padding: 0 .05rem;
+}
+
+.basic-property ul li {
+    position: relative;
+    float: left;
+    width: 1.45rem;
+    padding: 0 .05rem;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.basic-property ul li .input-wrap input {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    border: none;
+    outline: none;
+}
+
+/*功能选项*/
+.function-property ul {
+    padding: 0 .05rem;
+}
+
+.function-property li {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.function-property .evaluate-item {
+    float: left;
+    width: 1.45rem;
+    padding: 0 .05rem;
+}
+
+.function-property .input-wrap input {
+    display: none;
+}
+
+/*提交按钮*/
+.sbt-wrap {
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    width: 100%;
+    min-width: 320px;
+    max-width: 740px;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    background: #fff;
+}
+#submit {
+    display: block;
+    width: 3.02rem;
+    height: 0.39rem;
+    border: none;
+    background-color: #f9be00;
+    margin: 0.15rem auto;
+    font-size: 0.15rem;
+    color: #ffffff;
+    border-radius: 25px;
+}
+#submit:active {
+    background: #f99800;
+}
+
+#submit:disabled {
+    color: #fff;
+    background: #ccc !important;
+}
+
+html, body, #evaluate-form  {
+    height: 100%;
+}
+
+.red .progressbar .cover,
+.red li.selected .input-wrap,
+.red #submit {
+    background: #ca141d;
+    color: #ffffff;
+}
+.orange .progressbar .cover,
+.orange li.selected .input-wrap,
+.orange #submit {
+    background: #ec8420;
+}
+.light-red .progressbar .cover,
+.light-red li.selected .input-wrap,
+.light-red #submit {
+    background: #fe6547;
+}
+.red #submit {
+    border-radius: 25px;
+    height: .32rem;
+    line-height: .3rem;
+    font-size: .15rem;
+    margin: .15rem auto;
+}
+.red .evaluates-wrap .input-wrap {
+    border-radius: 4px;
+    background: #ffffff;
+    color: #999;
+    box-sizing: border-box;
+    border: 1px solid #eaeaea;
+}
