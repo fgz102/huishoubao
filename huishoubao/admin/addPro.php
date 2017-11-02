@@ -14,9 +14,52 @@ $rows_term=fetchAll($sql);
 <meta charset="utf-8">
 <title>-.-</title>
 <link href="./styles/global.css"  rel="stylesheet"  type="text/css" media="all" />
-<!--<script type="text/javascript" charset="utf-8" src="../plugins/kindeditor/kindeditor.js"></script>-->
-<!--<script type="text/javascript" charset="utf-8" src="../plugins/kindeditor/lang/zh_CN.js"></script>-->
+<script type="text/javascript" charset="utf-8" src="../plugins/kindeditor/kindeditor.js"></script>
+<script type="text/javascript" charset="utf-8" src="../plugins/kindeditor/lang/zh_CN.js"></script>
 <script type="text/javascript" src="./scripts/jquery-1.6.4.js"></script>
+<script type="text/javascript">
+		//添加商品编辑器
+        KindEditor.ready(function(K) {
+                window.editor = K.create('#editor_id');
+        });
+        //添加商品附件按钮及事件
+        $(document).ready(function(){
+        	$("#selectFileBtn_icon").click(function(){
+        		$fileField = $('<input type="file" name="thumbs_icon[]"/>');
+        		$fileField.hide();
+        		$("#attachList_icon").append($fileField);
+        		$fileField.trigger("click");
+        		$fileField.change(function(){
+        		$path = $(this).val();
+        		$filename = $path.substring($path.lastIndexOf("\\")+1);
+        		$attachItem = $('<div class="attachItem"><div class="left">a.gif</div><div class="right"><a href="javascript:void(0)" title="删除附件">删除</a></div></div>');
+        		$attachItem.find(".left").html($filename);
+        		$("#attachList_icon").append($attachItem);		
+        		});
+        	});
+        	$("#attachList_icon>.attachItem").find('a').live('click',function(obj,i){
+        		$(this).parents('.attachItem').prev('input').remove();
+        		$(this).parents('.attachItem').remove();
+        	});
+        	$("#selectFileBtn_baojia").click(function(){
+        		$fileField = $('<input type="file" name="thumbs_baojia[]"/>');
+        		$fileField.hide();
+        		$("#attachList_baojia").append($fileField);
+        		$fileField.trigger("click");
+        		$fileField.change(function(){
+        		$path = $(this).val();
+        		$filename = $path.substring($path.lastIndexOf("\\")+1);
+        		$attachItem = $('<div class="attachItem"><div class="left">a.gif</div><div class="right"><a href="javascript:void(0)" title="删除附件">删除</a></div></div>');
+        		$attachItem.find(".left").html($filename);
+        		$("#attachList_baojia").append($attachItem);		
+        		});
+        	});
+        	$("#attachList_baojia>.attachItem").find('a').live('click',function(obj,i){
+        		$(this).parents('.attachItem').prev('input').remove();
+        		$(this).parents('.attachItem').remove();
+        	});
+        });	
+</script>
 </head>
 <body>
 <h3>添加商品</h3>
@@ -65,6 +108,26 @@ $rows_term=fetchAll($sql);
 		</td>
 	</tr>
 	<?php endforeach?>
+	<tr>
+		<td align="right">商品描述</td>
+		<td colspan="3">
+			<textarea name="pDesc" id="editor_id" style="width:100%;height:150px;"></textarea>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="1" align="right">商品icon图</td>
+		<td colspan="3">
+			<a href="javascript:void(0)" id="selectFileBtn_icon" class="selectFileBtn">添加附件</a>
+			<div id="attachList_icon" class="clear"></div>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="1" align="right">商品报价图</td>
+		<td colspan="3">
+			<a href="javascript:void(0)" id="selectFileBtn_baojia" class="selectFileBtn">添加附件</a>
+			<div id="attachList_baojia" class="clear"></div>
+		</td>
+	</tr>	
 	<tr>
 		<td colspan="4"><input type="submit"  value="发布商品"/></td>
 	</tr>

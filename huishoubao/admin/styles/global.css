@@ -25,13 +25,13 @@ a:hover{
 
 
 
-/*ÉÌÆ·Ïà²á*/
+/*ï¿½ï¿½Æ·ï¿½ï¿½ï¿½*/
 
 #thumbs{
 	display:block;
 }
 
-#selectFileBtn{
+.selectFileBtn{
 	width:108px;
 	height:28px;
 	float:left;
@@ -40,18 +40,18 @@ a:hover{
 	background:url(../images/attach.jpg);
 }
 
-#selectFileBtn:hover{
+.selectFileBtn:hover{
 	background-position:left -45px;
 }
 
 
-/*¸½¼þÁÐ±í*/
-#attachList{
+/*ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½*/
+.attachList{
 	width:510px;
 	padding-top:5px;
 }
 
-/*¸½¼þÏîÄ¿ÔªËØ*/
+/*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿Ôªï¿½ï¿½*/
 
 .attachItem{
 	width:150px;

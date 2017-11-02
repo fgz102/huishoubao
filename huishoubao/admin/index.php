@@ -58,15 +58,6 @@ checkLogined();
                             <dd><a href="listCate.php" target="mainFrame">分类列表</a></dd>
                         </dl>
                     </li>
-                   <!--  <li>
-                        <h3><span  onclick="show('menu3','change3')" id="change3" >+</span>订单管理</h3>
-                        <dl id="menu3" style="display:none;">
-                            <dd><a href="#">订单修改</a></dd>
-                            <dd><a href="#">订单又修改</a></dd>
-                            <dd><a href="#">订单总是修改</a></dd>
-                            <dd><a href="#">测试内容你看着改</a></dd>
-                        </dl>
-                    </li> -->
                     <li>
                         <h3 onclick="show('menu4','change4')"><span  id="change4">+</span>用户管理</h3>
                         <dl id="menu4" style="display:none;">
@@ -81,7 +72,12 @@ checkLogined();
                             <dd><a href="listAdmin.php" target="mainFrame">管理员列表</a></dd>
                         </dl>
                     </li>
-                    
+                    <li>
+                        <h3 onclick="show('menu6','change6')"><span  id="change6">+</span>商品图片管理</h3>
+                        <dl id="menu6" style="display:none;">
+                            <dd><a href="listProImages.php" target="mainFrame">商品图片列表</a></dd>
+                        </dl>
+                    </li>
                 </ul>
             </div>
         </div>
