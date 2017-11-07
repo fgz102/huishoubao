@@ -52,7 +52,7 @@ $rows = fetchAll($sql);
                 <ul id="#phone">
                 	<?php foreach($rows as $row):?>
                     <li>
-						<a href="" title="<?php echo $row['pName']?>">
+						<a href="baojiaDetail.php?pid=<?php echo $row['pid']?>" title="<?php echo $row['pName']?>">
 							<img src="<?php echo $row['iconPath']?>" alt="<?php echo $row['pName']?>">
 							<div class="brand_name"><?php echo $row['pName']?></div>
 						</a>
