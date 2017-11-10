@@ -5,6 +5,24 @@
  */
 function addCate(){
 	$arr=$_POST;
+	$path_icon="./uploads/icon";
+	$path_baojia="./uploads/boajia";
+	$uploadFile_icon=uploadFile($path_icon);
+	$uploadFile_baojia=uploadFile($path_baojia);
+	var_dump($arr);
+	var_dump(is_array($uploadFile_icon));
+	echo $uploadFile($path);
+	//判断
+	if(is_array($uploadFile_icon)&&$uploadFile_icon){
+		thumb($path_icon."/".$uploadFile_icon['name']);
+		echo "jinru1";
+	}
+	if(is_array($uploadFile_baojia)&&$uploadFile_baojia){
+		foreach($uploadFile_baojia as $key=>$uploadFile){
+			thumb($path."/".$uploadFile['name']);
+		}
+			echo "jinru1";
+	}
 	if(insert("imooc_cate",$arr)){
 		$mes="分类添加成功!<br/><a href='addCate.php'>继续添加</a>|<a href='listCate.php'>查看分类</a>";
 	}else{

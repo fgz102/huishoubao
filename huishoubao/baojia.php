@@ -1,6 +1,6 @@
 <?php
 require 'include.php';
-$sql="select * from imooc_album,imooc_pro where imooc_album.pid=imooc_pro.id";
+$sql="select id,cName,iconPath from imooc_cate";
 $rows = fetchAll($sql);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -52,9 +52,9 @@ $rows = fetchAll($sql);
                 <ul id="#phone">
                 	<?php foreach($rows as $row):?>
                     <li>
-						<a href="baojiaDetail.php?pid=<?php echo $row['pid']?>" title="<?php echo $row['pName']?>">
-							<img src="<?php echo $row['iconPath']?>" alt="<?php echo $row['pName']?>">
-							<div class="brand_name"><?php echo $row['pName']?></div>
+						<a href="baojiaDetail.php?cid=<?php echo $row['id']?>" title="<?php echo $row['cName']?>">
+							<img src="<?php echo $row['iconPath']?>" alt="<?php echo $row['cName']?>">
+							<div class="brand_name"><?php echo $row['cName']?></div>
 						</a>
 					</li>
 					<?php endforeach;?>

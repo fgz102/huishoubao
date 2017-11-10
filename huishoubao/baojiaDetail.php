@@ -1,7 +1,7 @@
 <?php
 require 'include.php';
-$id=$_GET['pid'];
-$sql="select * from imooc_pro where id={$id}";
+$id=$_GET['cid'];
+$sql="select * from imooc_cate where id={$id}";
 $row = fetchOne($sql);
 ?>
 <html>
@@ -173,15 +173,15 @@ $row = fetchOne($sql);
 	<body>
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-			<h1 class="mui-title"><?php echo $row['pName']?>报价详情</h1>
+			<h1 class="mui-title"><?php echo $row['cName']?>报价详情</h1>
 		</header>
 		<div class="mui-content">
 			<div class="mui-content-padded">
 				<p>点击如下图片体验全屏预览功能</p>
 				<p>
-					<img src="<?php echo 'admin/images/'.$row['baojiaPic']?>" data-preview-src="" data-preview-group="1" />
+					<img src="<?php echo 'admin/images/'.$row['picPath']?>" data-preview-src="" data-preview-group="1" />
 				</p>
-				<p><?php echo $row['pDesc']?></p>
+				<p><?php echo $row['description']?></p>
 			</div>
 		</div>
 	</body>

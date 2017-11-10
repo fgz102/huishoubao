@@ -108,26 +108,7 @@ $rows_term=fetchAll($sql);
 		</td>
 	</tr>
 	<?php endforeach?>
-	<tr>
-		<td align="right">商品描述</td>
-		<td colspan="3">
-			<textarea name="pDesc" id="editor_id" style="width:100%;height:150px;"></textarea>
-		</td>
-	</tr>
-	<tr>
-		<td colspan="1" align="right">商品icon图</td>
-		<td colspan="3">
-			<a href="javascript:void(0)" id="selectFileBtn_icon" class="selectFileBtn">添加附件</a>
-			<div id="attachList_icon" class="clear"></div>
-		</td>
-	</tr>
-	<tr>
-		<td colspan="1" align="right">商品报价图</td>
-		<td colspan="3">
-			<a href="javascript:void(0)" id="selectFileBtn_baojia" class="selectFileBtn">添加附件</a>
-			<div id="attachList_baojia" class="clear"></div>
-		</td>
-	</tr>	
+
 	<tr>
 		<td colspan="4"><input type="submit"  value="发布商品"/></td>
 	</tr>
